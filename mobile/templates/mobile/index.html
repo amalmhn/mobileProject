@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Freelancer - Start Bootstrap Theme</title>
+        <title>Mobile Store</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -44,7 +44,7 @@
                 <!-- Masthead Avatar Image-->
                 <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="" />
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Mobiel Store</h1>
+                <h1 class="masthead-heading text-uppercase mb-0">Mobile Store</h1>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
@@ -56,42 +56,23 @@
             </div>
         </header>
         <!-- Portfolio Section-->
-<!--        <form action="" method="post" enctype="multipart/form-data">-->
-<!--            {%csrf_token%}-->
-<!--            {{form.as_p}}-->
-<!--            <input type="submit" value="Add" class="form-group">-->
-<!--        </form>-->
+
         <div class="container">
             <div class="row">
+                {%for mobiles in mobile %}
         <div class="card , col-4" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+  <img height=60% width=20% src="{{mobiles.image.url}}" class="card-img-top" alt="...">
 
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">BUY</a>
+                    <h5 class="card-title">{{mobiles.phone_name}}</h5>
+                    <p class="card-text">Memory:{{mobiles.memory}} , Price:{{mobiles.price}}</p>
+                    <a href="{%url 'detail' mobiles.id%}" class="btn btn-primary">BUY</a>
                   </div>
                 </div>
-            <div class="card , col-4" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-                <div class="card , col-4" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-                </div>
+                {%endfor%}
+                            </div>
             </div>
+
         {%endblock%}
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">

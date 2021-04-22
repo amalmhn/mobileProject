@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{%extends 'mobile/index.html'%}
+{%block body_block%}
+<div>
+    <h1>555</h1>
+    <h1>555</h1>
+<table class="table">
+    <tr>
+        <td>Image</td><td><img height=20% width=20% src="{{mobile.image.url}}" alt=""></td></tr>
+    <tr>
+        <td>Phone Name</td><td>{{mobile.phone_name}}</td></tr>
+        <tr><td>Memory</td><td>{{mobile.memory}}</td></tr>
+        <tr><td>Price</td><td>{{mobile.price}}</td>
+    </tr>
+
+
+</table>
+    <a href="" class="btn btn-success">Order</a>
+    </div>
+{%endblock%}

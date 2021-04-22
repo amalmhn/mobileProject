@@ -16,8 +16,18 @@ def mobile_create(request):
             return redirect('create')
         else:
             context['form'] = form
-            return render(request, 'mobile/index.html', context)
+            return render(request, 'mobile/createPhone.html', context)
+    return render(request,'mobile/createPhone.html',context)
+
+def home(request):
+    mobile = MobileModel.objects.all()
+    context={}
+    context['mobile'] = mobile
+
     return render(request,'mobile/index.html',context)
 
-def demo(request):
-    return render(request,'mobile/createPhone.html')
+def mobile_detail(request,id):
+    mobile = MobileModel.objects.get(id=id)
+    context = {}
+    context['mobile'] = mobile
+    return render(request,'mobile/detailPhone.html',context)

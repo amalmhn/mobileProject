@@ -18,5 +18,6 @@ from django.urls import path
 from .views import *
 urlpatterns = [
     path('create',mobile_create,name='create'),
-    path('demo',demo,name='demo'),
+    path('home',home,name='home'),
+    path('detail/<int:id>',mobile_detail,name='detail'),
 ]
